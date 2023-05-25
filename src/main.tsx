@@ -9,9 +9,9 @@ import 'shared/config/i18n/i18n';
 const container = document.querySelector('#root');
 const root = createRoot(container as HTMLElement);
 root.render(
-	<BrowserRouter>
-		<ThemeProvider>
-			<App />
-		</ThemeProvider>
-	</BrowserRouter>,
+    <BrowserRouter>
+        <ThemeProvider>
+            <App />
+        </ThemeProvider>
+    </BrowserRouter>,
 );

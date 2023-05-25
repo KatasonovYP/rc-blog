@@ -1,5 +1,5 @@
-import { RuleSetRule } from 'webpack';
-import { BuildOptions } from './types/config';
+import { type RuleSetRule } from 'webpack';
+import { type BuildOptions } from './types/config';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 
 export function buildLoaders({ isDev }: BuildOptions): RuleSetRule[] {
@@ -31,11 +31,11 @@ export function buildLoaders({ isDev }: BuildOptions): RuleSetRule[] {
 						localIdentName: isDev
 							? '[path][name]__[local]--[hash:base64:5]'
 							: '[hash:base64:8]',
-					},
-				},
+					}
+				}
 			},
 			'sass-loader',
-		],
+		]
 	};
 	return [fileLoader, svgLoader, typescriptLoader, cssLoader];
 }
