@@ -1,12 +1,11 @@
 import { FC } from 'react';
+import { useTranslation } from 'react-i18next';
 
 const About: FC = () => {
+	const { t } = useTranslation('about');
 	return (
 		<div>
-			<h1>
-				Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-				Commodi, magnam.
-			</h1>
+			<h1>{t('about')}</h1>
 		</div>
 	);
 };

@@ -1,0 +1,23 @@
+.sidebar {
+  height: calc(100vh - var(--navbar-height));
+  width: var(--sidebar-width);
+  background: var(--inverted-bg-color);
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: var(--page-padding);
+
+  transition: width 0.2s;
+}
+
+.collapsed {
+  width: var(--sidebar-width-collapsed);
+}
+
+.switchers {
+  display: flex;
+  gap: 1rem;
+  margin: 0 auto;
+}
