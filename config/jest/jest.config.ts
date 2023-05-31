@@ -1,4 +1,5 @@
 import {JestConfigWithTsJest} from 'ts-jest';
+import path from 'path';
 
 
 const config: JestConfigWithTsJest = {
@@ -24,20 +25,31 @@ const config: JestConfigWithTsJest = {
 
 	testEnvironment: 'jsdom',
 
+	// A list of paths to modules that run some code to configure or set up the testing framework before each test
+	setupFilesAfterEnv: ['<rootDir>config/jest/setup-tests.ts'],
+
 
 	moduleDirectories: [
 		'node_modules',
 	],
 
 	// roots: ['<rootDir>'],
-	// modulePaths: [compilerOptions.baseUrl],
-	// moduleNameMapper: pathsToModuleNameMapper(compilerOptions.paths),
+	modulePaths: ['<rootDir>src'],
+
+	moduleNameMapper: {
+		'\\.s?css$': 'identity-obj-proxy',
+		'\\.svg$': path.resolve(__dirname, 'jest-empty-component.tsx'),
+	},
 
 	testMatch: [
 		'<rootDir>src/**/*(*.)@(spec|test).[tj]s?(x)',
 	],
 
 	moduleFileExtensions: ['js', 'mjs', 'cjs', 'jsx', 'ts', 'tsx', 'json', 'node'],
+
+
+	// A set of global variables that need to be available in all test environments
+
 
 	// Indicates whether the coverage information should be collected while executing the test
 	// collectCoverage: false,
@@ -85,9 +97,6 @@ const config: JestConfigWithTsJest = {
 
 	// A path to a module which exports an async function that is triggered once after all test suites
 	// globalTeardown: undefined,
-
-	// A set of global variables that need to be available in all test environments
-	// globals: {},
 
 	// The maximum amount of workers used to run your tests. Can be specified as % or a number. E.g. maxWorkers: 10% will use 10% of your CPU amount + 1 as the maximum worker number. maxWorkers: 2 will use a maximum of 2 workers.
 	// maxWorkers: "50%",
@@ -139,9 +148,6 @@ const config: JestConfigWithTsJest = {
 
 	// The paths to modules that run some code to configure or set up the testing environment before each test
 	// setupFiles: [],
-
-	// A list of paths to modules that run some code to configure or set up the testing framework before each test
-	// setupFilesAfterEnv: [],
 
 	// The number of seconds after which a test is considered as slow and reported as such in the results.
 	// slowTestThreshold: 5,

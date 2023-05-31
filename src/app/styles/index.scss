@@ -16,5 +16,6 @@
 
 .page-wrapper {
     flex-grow: 1;
+    height: var(--page-height);
     padding: var(--page-padding);
 }

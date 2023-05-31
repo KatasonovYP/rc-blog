@@ -47,10 +47,13 @@ export function buildLoaders({isDev}: BuildOptions): RuleSetRule[] {
 						localIdentName: isDev
 							? '[path][name]__[local]--[hash:base64:5]'
 							: '[hash:base64:8]',
+						exportLocalsConvention: 'camelCase'
 					}
 				}
 			},
-			'sass-loader',
+			{
+				loader: 'sass-loader',
+			},
 		]
 	};
 	return [jsonLoader, fileLoader, svgLoader, babelLoader, typescriptLoader, cssLoader];

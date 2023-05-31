@@ -36,7 +36,11 @@ module.exports = {
         'no-underscore-dangle': 'off',
         'react/jsx-no-bind': 'off',
         'max-len': 'warn',
-        'i18next/no-literal-string': ['error', { markupOnly: true }],
+        'i18next/no-literal-string': ['error', {
+            markupOnly: true,
+            ignoreAttribute: ['data-testid', 'to', 'theme'],
+        }],
+        'arrow-body-style': 'off',
     },
     settings: {
         react: {
@@ -46,4 +50,12 @@ module.exports = {
     globals: {
         __IS_DEV__: true,
     },
+    overrides: [
+        {
+            files: ['**/src/**/*.(spec|test).{ts,tsx}'],
+            rules: {
+                'i18next/no-literal-string': 'off',
+            },
+        },
+    ],
 };
