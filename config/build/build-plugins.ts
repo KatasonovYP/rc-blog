@@ -11,11 +11,10 @@ export function buildPlugins({
 	paths,
 	isDev,
 }: BuildOptions): WebpackPluginInstance[] {
-	return [
+	const plugins: WebpackPluginInstance[] = [
 		new HtmlWebpackPlugin({
 			template: paths.html,
 		}),
-		new ProgressPlugin(),
 		new MiniCssExtractPlugin({
 			filename: 'css/[name].[contenthash:8].css',
 			chunkFilename: 'css/[name].[contenthash:8].css',
@@ -23,5 +22,9 @@ export function buildPlugins({
 		new DefinePlugin({
 			__IS_DEV__: JSON.stringify(isDev),
 		})
-	];
+	]
+
+	isDev && plugins.push(new ProgressPlugin())
+
+	return plugins;
 }
