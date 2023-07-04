@@ -55,3 +55,101 @@ export const OutlineDark: Story = {
     },
 };
 OutlineDark.decorators = [ThemeDecorator(Theme.DARK)];
+
+export const Background: Story = {
+    args: {
+        theme: 'background',
+        children: 'Text',
+    },
+};
+
+export const BackgroundDark: Story = {
+    args: {
+        theme: 'background',
+        children: 'Text',
+    },
+};
+BackgroundDark.decorators = [ThemeDecorator(Theme.DARK)];
+
+export const InvertedBackground: Story = {
+    args: {
+        theme: 'inverted-background',
+        children: 'Text',
+    },
+};
+
+export const InvertedBackgroundDark: Story = {
+    args: {
+        theme: 'inverted-background',
+        children: 'Text',
+    },
+};
+InvertedBackgroundDark.decorators = [ThemeDecorator(Theme.DARK)];
+
+export const SizeSM: Story = {
+    args: {
+        theme: 'inverted-background',
+        size: 'sm',
+        children: 'Text',
+    },
+};
+
+export const SizeMD: Story = {
+    args: {
+        theme: 'inverted-background',
+        size: 'md',
+        children: 'Text',
+    },
+};
+
+export const SizeLG: Story = {
+    args: {
+        theme: 'inverted-background',
+        size: 'lg',
+        children: 'Text',
+    },
+};
+
+export const SizeXL: Story = {
+    args: {
+        theme: 'inverted-background',
+        size: 'xl',
+        children: 'Text',
+    },
+};
+
+export const SizeSquareSM: Story = {
+    args: {
+        theme: 'inverted-background',
+        size: 'sm',
+        square: true,
+        children: '<',
+    },
+};
+
+export const SizeSquareMD: Story = {
+    args: {
+        theme: 'inverted-background',
+        size: 'md',
+        square: true,
+        children: '<',
+    },
+};
+
+export const SizeSquareLG: Story = {
+    args: {
+        theme: 'inverted-background',
+        size: 'lg',
+        square: true,
+        children: '<',
+    },
+};
+
+export const SizeSquareXL: Story = {
+    args: {
+        theme: 'inverted-background',
+        size: 'xl',
+        square: true,
+        children: '<',
+    },
+};
