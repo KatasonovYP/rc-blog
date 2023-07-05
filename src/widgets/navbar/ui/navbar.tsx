@@ -12,7 +12,7 @@ interface NavbarProps {
 export const Navbar: FC<NavbarProps> = ({ className }) => {
     const { t } = useTranslation();
 
-    const [isOpen, setIsOpen] = useState(true);
+    const [isOpen, setIsOpen] = useState(false);
 
     function onClose() {
         setIsOpen(false);
@@ -32,7 +32,7 @@ export const Navbar: FC<NavbarProps> = ({ className }) => {
             </Button>
             <Modal onClose={onClose} isOpen={isOpen}>
                 <p>
-                    Lorem ipsum dolor sit amet, consectetur
+                    {t('Auth')}
                 </p>
             </Modal>
         </nav>

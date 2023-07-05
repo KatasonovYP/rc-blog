@@ -1,7 +1,11 @@
-import { FC, MouseEvent, ReactNode } from 'react';
+import {
+    FC, MouseEvent, ReactNode, useRef, useState,
+} from 'react';
 import { classNames } from 'shared/lib';
 import { Portal } from 'shared/ui/portal';
 import cls from './modal.module.scss';
+
+const ANIMATION_DELAY = 200;
 
 interface ModalProps {
     onClose?: () => void;
@@ -18,9 +22,16 @@ export const Modal: FC<ModalProps> = (props) => {
         children,
     } = props;
 
+    const [isClosing, setIsClosing] = useState(false);
+    const timeRef = useRef<ReturnType<typeof setTimeout>>();
+
     function closeHandler() {
         if (onClose) {
-            onClose();
+            setIsClosing(true);
+            timeRef.current = setTimeout(() => {
+                onClose();
+                setIsClosing(false);
+            }, ANIMATION_DELAY);
         }
     }
 
@@ -28,12 +39,16 @@ export const Modal: FC<ModalProps> = (props) => {
         event.stopPropagation();
     }
 
+    const mods: Record<string, boolean> = {
+        [cls.opened]: isOpen,
+        [cls.closing]: isClosing,
+    };
     return (
         <Portal>
             {/* eslint-disable-next-line */}
             <div
                 onClick={closeHandler}
-                className={classNames(cls.overlay, { [cls.opened]: isOpen })}
+                className={classNames(cls.overlay, mods)}
             >
                 {/* eslint-disable-next-line */}
                 <div
