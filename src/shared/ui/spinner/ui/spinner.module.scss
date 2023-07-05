@@ -1,11 +1,11 @@
 .spinner {
+    display: inline-block;
     width: 48px;
     height: 48px;
-    border: 5px solid var(--inverted-bg-color);
-    border-bottom-color: transparent;
-    border-radius: 50%;
-    display: inline-block;
     box-sizing: border-box;
+    border: 5px solid var(--inverted-bg-color);
+    border-radius: 50%;
+    border-bottom-color: transparent;
     animation: rotation 1s linear infinite;
 }
 

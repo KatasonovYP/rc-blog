@@ -1,12 +1,12 @@
 .sidebar {
-    height: calc(100vh - var(--navbar-height));
-    width: var(--sidebar-width);
-    background: var(--inverted-bg-color);
     position: relative;
     display: flex;
+    width: var(--sidebar-width);
+    height: calc(100vh - var(--navbar-height));
     flex-direction: column;
     justify-content: space-between;
     padding: var(--page-padding);
+    background: var(--inverted-bg-color);
     transition: width 0.2s;
 }
 
@@ -18,15 +18,15 @@
 
 .switchers {
     display: flex;
-    gap: 1rem;
     align-items: center;
     margin: 0 auto;
+    gap: 1rem;
 }
 
 .links {
-    margin: 0 auto;
     display: flex;
     flex-direction: column;
+    margin: 0 auto;
     gap: 1rem;
 }
 
