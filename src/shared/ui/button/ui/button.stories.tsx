@@ -56,6 +56,21 @@ export const OutlineDark: Story = {
 };
 OutlineDark.decorators = [ThemeDecorator(Theme.DARK)];
 
+export const OutlineInverted: Story = {
+    args: {
+        theme: 'outline-inverted',
+        children: 'Text',
+    },
+};
+
+export const OutlineInvertedDark: Story = {
+    args: {
+        theme: 'outline-inverted',
+        children: 'Text',
+    },
+};
+OutlineInvertedDark.decorators = [ThemeDecorator(Theme.DARK)];
+
 export const Background: Story = {
     args: {
         theme: 'background',

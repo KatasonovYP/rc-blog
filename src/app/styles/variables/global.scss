@@ -20,4 +20,6 @@
     --page-height: calc(100vh - var(--navbar-height));
     --sidebar-width: 300px;
     --sidebar-width-collapsed: 80px;
+    --z-index-overlay: 10;
+    --z-index-modal: 20;
 }

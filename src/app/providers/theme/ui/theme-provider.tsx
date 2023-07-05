@@ -9,6 +9,7 @@ import {
 } from 'shared/config';
 
 const defaultTheme =	(localStorage.getItem(LOCAL_STORAGE_THEME_KEY) as Theme) || Theme.LIGHT;
+document.body.className = defaultTheme;
 
 export const ThemeProvider: FC<PropsWithChildren> = ({ children }) => {
     const [theme, setTheme] = useState<Theme>(defaultTheme);
