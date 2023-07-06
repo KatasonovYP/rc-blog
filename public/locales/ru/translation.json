@@ -7,5 +7,7 @@
 	"language short": "Ru",
 	"about-nav": "о сайте",
 	"toggle": "переключить",
-	"not found": "страница не найдена"
+	"not found": "страница не найдена",
+	"increment": "увеличить",
+	"decrement": "уменьшить"
 }

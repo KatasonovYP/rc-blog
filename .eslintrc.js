@@ -40,6 +40,7 @@ module.exports = {
             ignoreAttribute: ['data-testid', 'to', 'theme', 'size'],
         }],
         'arrow-body-style': 'off',
+        'no-param-reassign': 'off',
     },
     settings: {
         react: {

@@ -7,5 +7,7 @@
 	"language short": "En",
 	"about-nav": "about",
 	"toggle": "toggle",
-	"not found": "not found"
+	"not found": "not found",
+	"increment": "increment",
+	"decrement": "decrement"
 }
